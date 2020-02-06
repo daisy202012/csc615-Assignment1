@@ -39,23 +39,23 @@ double distance (){
 
 clock_t start_t;
 clock_t end_t;
-clock_t total_t;
+double total_t;
 
 //save start time 
 while(digitalRead(echo) == 0){
     start_t = clock();
-    printf("Starting of the program, start_t = %ld\n", start_t);
+    //printf("Starting of the program, start_t = %ld\n", start_t);
 }
 
 //save time of arrival 
 while(digitalRead(echo) == 1){
    end_t = clock();
-   printf("End of the big loop, end_t = %ld\n", end_t);
+   //printf("End of the big loop, end_t = %ld\n", end_t);
 } 
 
 //time difference between start and arrival 
 total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
-   printf("Total time taken by CPU: %ld\n", total_t  );
+   //printf("Total time taken by CPU: %ld\n", total_t  );
 
 return (total_t * 17000);
 
@@ -65,15 +65,16 @@ return (total_t * 17000);
 int main (void){
 
      if( wiringPiSetup() == -1){
-      pinMode(echo, INPUT);
-      pinMode(trig, OUTPUT);
-     }else{
        exit(0);
-    
+     
+     }else{
+        pinMode(echo, INPUT);
+      pinMode(trig, OUTPUT);
+    }
     while(1){
         double dist = distance();
-        printf("%f"dist);
-        delay(1000);
+        printf("Distance %f\n", dist);
+        
     }
   return  0;
 } 
