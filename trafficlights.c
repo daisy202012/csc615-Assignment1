@@ -14,7 +14,7 @@
   pinMode(YELLOW, OUTPUT);
   pinMode(GREEN, OUTPUT);
 
-  var = 1;
+  int var = 1;
   
   while(var < 2) {
     // Red is on 
