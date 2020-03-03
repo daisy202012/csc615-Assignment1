@@ -7,7 +7,7 @@
 #define YELLOW 4
 #define GREEN 5 
 
-
+  wiringPiSetUp();
   pinMode(1, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(5, OUTPUT);
