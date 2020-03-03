@@ -14,7 +14,9 @@
   pinMode(YELLOW, OUTPUT);
   pinMode(GREEN, OUTPUT);
 
-  while(1) {
+  var = 0;
+
+  while(var < 2) {
     // Red is on 
     digitalWrite(RED, HIGH);
     digitalWrite(YELLOW, LOW);
@@ -34,8 +36,10 @@
     digitalWrite(YELLOW, HIGH);
     digitalWrite(GREEN, LOW);
     delay(1500);
-  
+
+    var++;
+
   }
   // Never reached, keeps the compiler happy.
-  return 0;
+  return  0;
 }
