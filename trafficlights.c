@@ -1,4 +1,20 @@
-
+/****************************************************************************************************************************************
+* 
+* Class: CSC-615-01 Spring 2020
+*
+* Name: Daisu Sanchez
+*
+* Student ID: 912740223 
+* 
+* Project: Assignment 1 - Traffic Light 
+*
+* File: Trafficlights.c
+*
+* Desription: The program created is a traffic light, using one Red, one Yellow, and oe Green LED.
+* The Green LED should be on for 6 seconds, then the light should switch to the Yellow light which 
+* should be on for 1.5 seconds, then switch to Red for 5 seconds. Then repeat the cycle 2 more times. 
+*
+*****************************************************************************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <wiringPi.h>
