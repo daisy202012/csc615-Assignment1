@@ -17,6 +17,19 @@
   int var = 0;
   
   while(var < 2) {
+
+    // Green is on 
+    digitalWrite(RED, LOW);
+    digitalWrite(YELLOW, LOW);
+    digitalWrite(GREEN, HIGH);
+    delay(6000); 
+
+    // Yellow is on
+    digitalWrite(RED, LOW);
+    digitalWrite(YELLOW, HIGH);
+    digitalWrite(GREEN, LOW);
+    delay(1500);
+
     // Red is on 
     digitalWrite(RED, HIGH);
     digitalWrite(YELLOW, LOW);
@@ -25,21 +38,15 @@
     //pauses program for the amount of time (in miliseconds) specified as parameter 
     delay(5000);
 
-    // Green is on 
-    digitalWrite(RED, LOW);
-    digitalWrite(YELLOW, LOW);
-    digitalWrite(GREEN, HIGH);
-    delay(6000);
-
-    // Yellow is on
-    digitalWrite(RED, LOW);
-    digitalWrite(YELLOW, HIGH);
-    digitalWrite(GREEN, LOW);
-    delay(1500);
-
     var++;
 
   }
+
+    digitalWrite(RED, LOW);
+    digitalWrite(YELLOW, LOW);
+    digitalWrite(GREEN, LOW);
+    delay(1500);
   // Never reached, keeps the compiler happy.
+
   return  0;
-}
+}   
