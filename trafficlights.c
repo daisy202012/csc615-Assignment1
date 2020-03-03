@@ -9,7 +9,7 @@
 
   int main (void){
   
-  wiringPiSetUp();
+  wiringPiSetup();
   pinMode(RED, OUTPUT);
   pinMode(YELLOW, OUTPUT);
   pinMode(GREEN, OUTPUT);
