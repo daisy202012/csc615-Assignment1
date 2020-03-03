@@ -1,4 +1,4 @@
-include <signal.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <wiringPi.h>
@@ -10,9 +10,10 @@ include <signal.h>
   int main (void){
   
   wiringPiSetUp();
-  pinMode(1, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
+  pinMode(RED, OUTPUT);
+  pinMode(YELLOW, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+  }
 
   while(1) {
     // Red is on 
@@ -34,8 +35,7 @@ include <signal.h>
     digitalWrite(YELLOW, High);
     digitalWrite(GREEN, LOW);
     delay(1500);
-
-  }
+  
   }
   // Never reached, keeps the compiler happy.
   return 0;
