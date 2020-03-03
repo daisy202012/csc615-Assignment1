@@ -31,7 +31,7 @@
 
     // Yellow is on
     digitalWrite(RED, LOW);
-    digitalWrite(YELLOW, High);
+    digitalWrite(YELLOW, HIGH);
     digitalWrite(GREEN, LOW);
     delay(1500);
   
