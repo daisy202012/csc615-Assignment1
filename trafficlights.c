@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <wiringPi.h>
+#include <wiringPi.h>OUTPUT
 
 #define RED 1 
 #define YELLOW 4
@@ -11,29 +11,28 @@
   pinMode(RED, OUTPUT);
   pinMode(YELLOW, OUTPUT);
   pinMode(GREEN, OUTPUT);
-breadboard chart gpio
+
   while(1) {
-    // Red
+    // Red is on 
     digitalWrite(RED, HIGH);
-    delay(3000);
+    digitalWrite(YELLOW, LOW);
+    digitalWrite(GREEN, LOW);
 
-    // Red and Yellow
-    digitalWrite(YELLOW, HIGH);
-    delay(1000);
+    //pauses program for the amount of time (in miliseconds) specified as parameter 
+    delay(5000);
 
-    // Green
+    // Green is on 
     digitalWrite(RED, LOW);
     digitalWrite(YELLOW, LOW);
     digitalWrite(GREEN, HIGH);
-    delay(5000);
+    delay(6000);
 
-    // Yellow
+    // Yellow is on
+    digitalWrite(RED, LOW);
+    digitalWrite(YELLOW, High);
     digitalWrite(GREEN, LOW);
-    digitalWrite(YELLOW, HIGH);
-    delay(2000);
+    delay(1500);
 
-    // Yellow off
-    digitalWrite(YELLOW, LOW);
   }
 
   // Never reached, keeps the compiler happy.
