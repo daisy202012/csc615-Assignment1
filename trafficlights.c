@@ -1,16 +1,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <wiringPi.h>OUTPUT
+#include <wiringPi.h>
 
 #define RED 1 
 #define YELLOW 4
 #define GREEN 5 
 
 
-  pinMode(RED, OUTPUT);
-  pinMode(YELLOW, OUTPUT);
-  pinMode(GREEN, OUTPUT);
+  pinMode(1, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
 
   while(1) {
     // Red is on 
