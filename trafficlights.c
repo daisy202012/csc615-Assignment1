@@ -13,7 +13,6 @@
   pinMode(RED, OUTPUT);
   pinMode(YELLOW, OUTPUT);
   pinMode(GREEN, OUTPUT);
-  }
 
   while(1) {
     // Red is on 
