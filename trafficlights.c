@@ -57,12 +57,12 @@
     var++;
 
   }
-
+    //ALl lights are off 
     digitalWrite(RED, LOW);
     digitalWrite(YELLOW, LOW);
     digitalWrite(GREEN, LOW);
     delay(1500);
-  // Never reached, keeps the compiler happy.
+  
 
   return  0;
 }   
