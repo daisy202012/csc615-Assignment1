@@ -14,8 +14,8 @@
   pinMode(YELLOW, OUTPUT);
   pinMode(GREEN, OUTPUT);
 
-  var = 0;
-
+  var = 1;
+  
   while(var < 2) {
     // Red is on 
     digitalWrite(RED, HIGH);
