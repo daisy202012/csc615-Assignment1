@@ -19,8 +19,8 @@
 #define LOW  0
 #define HIGH 1
 
-#define PIN  5 /* P1-18 */
-#define POUT 1/* gpiosysfs.c */
+#define PIN  1 /* P1-18 */
+#define POUT 5/* gpiosysfs.c */
 
 #include "gpiosysfs.h"
 
