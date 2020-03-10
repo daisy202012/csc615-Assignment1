@@ -40,13 +40,13 @@ time_t endTime;
 //save start time 
 while(digitalRead(echo) == 0){
 startTime = time(NULL);
-printf("start", startTime);
+printf(startTime);
 }
 
 //save time of arrival 
 while(digitalRead(echo) == 1){
 endTime = time(NULL);
-printf("arrival", endTime);
+printf(endTime);
 } 
 
 //time difference between start and arrival 
@@ -66,7 +66,7 @@ int main (void){
 
     while(1){
         double dist = distance();
-        printf("Measured distance\n ", dist);
+        printf(dist);
         delay(1000);
     }
   return  0;
