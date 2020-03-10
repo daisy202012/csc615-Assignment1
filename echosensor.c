@@ -1,15 +1,15 @@
 /****************************************************************************************************************************************
-* 
+*
 * Class: CSC-615-01 Spring 2020
 *
 * Name: Daisu Sanchez
 *
-* Student ID: 912740223 
-* 
+* Student ID: 912740223
+*
 * Project: Assignment 2 - Tapeless Ruler - Echo Sensor
 * File: echosensor.c
 *
-* Desription: 
+* Desription:
 *
 *****************************************************************************************************************************************/
 #include <stdio.h>
@@ -24,39 +24,39 @@
 //measures distance
 double distance (){
 
-//set trig to HIGH
+//set trig to LOW
+ digitalWrite(trig, LOW);
+
+ delay(2000);
+
+ //set trig to HIGH
  digitalWrite(trig, HIGH);
-
- //set trig to delay 1 micosecond
- delay(1000);
-
- //set trig to LOW
+ delay(0.01);
+ 
+ //set trig to
  digitalWrite(trig, LOW);
 
 
-clock_t start_t;
-clock_t end_t;
-clock_t total_t;
+time_t startTime;
+time_t endTime;
 
-//save start time 
+//save start time
 while(digitalRead(echo) == 0){
-    start_t = clock();
-    printf("Starting of the program, start_t = %ld\n", start_t);
+startTime = time(NULL);
 }
 
-//save time of arrival 
+//save time of arrival
 while(digitalRead(echo) == 1){
-   end_t = clock();
-   printf("End of the big loop, end_t = %ld\n", end_t);
-} 
+endTime = time(NULL);
+}
 
-//time difference between start and arrival 
-total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
-   printf("Total time taken by CPU: %ld\n", total_t  );
+//time difference between start and arrival
+time_t timeElasped = startTime - endTime;
 
-return (total_t * 34300) / 2;
+return round(timeElasped * 343150, 2);
 
 }
+
 
 
 int main (void){
@@ -68,8 +68,9 @@ int main (void){
 
     while(1){
         double dist = distance();
-        printf("%f"dist);
-        delay(1000);
+        printf ("Measured distance", dist);
+
+       
     }
   return  0;
 } 
