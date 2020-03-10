@@ -34,25 +34,27 @@ double distance (){
  digitalWrite(trig, LOW);
 
 
-time_t startTime;
-time_t endTime;
+clock_t start_t;
+clock_t end_t;
+clock_t total_t;
 
 //save start time 
 while(digitalRead(echo) == 0){
-startTime = time(NULL);
-printf(startTime);
+    start_t = clock();
+    printf("Starting of the program, start_t = %ld\n", start_t);
 }
 
 //save time of arrival 
 while(digitalRead(echo) == 1){
-endTime = time(NULL);
-printf(endTime);
+   end_t = clock();
+   printf("End of the big loop, end_t = %ld\n", end_t);
 } 
 
 //time difference between start and arrival 
-time_t timeElasped = startTime - endTime;
+total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
+   printf("Total time taken by CPU: %f\n", total_t  );
 
-return (timeElasped * 34300) / 2;
+return (total_t * 34300) / 2;
 
 }
 
