@@ -52,7 +52,7 @@ while(digitalRead(echo) == 1){
 
 //time difference between start and arrival 
 total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
-   printf("Total time taken by CPU: %f\n", total_t  );
+   printf("Total time taken by CPU: ld\n", total_t  );
 
 return (total_t * 34300) / 2;
 
