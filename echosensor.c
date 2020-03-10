@@ -34,28 +34,26 @@ double distance (){
  digitalWrite(trig, LOW);
 
 
-startTime = time();
-endTime = time();
+time_t startTime;
+time_t endTime;
 
 //save start time 
-while(digitWrite(echo) == 0){
+while(digitalRead(echo) == 0){
 startTime = time();
 }
 
 //save time of arrival 
-while(digitalWrite(echo) == 1){
+while(digitalRead(echo) == 1){
 endTime = time();
 } 
 
 //time difference between start and arrival 
-timeElasped = startTime - endTime;
+time_t timeElasped = startTime - endTime;
 
 return distance = (timeElasped * 34300) / 2;
 
 }
 
-
-}
 
 int main (void){
 
@@ -66,7 +64,7 @@ int main (void){
 
     while(1){
         dist = distance();
-        print ("Measured distance %0.1f cm\n ", dist)
+        print ("Measured distance\n ", dist)
         delay(1000);
     }
   return  0;
