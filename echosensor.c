@@ -1,15 +1,15 @@
 /****************************************************************************************************************************************
-*
+* 
 * Class: CSC-615-01 Spring 2020
 *
 * Name: Daisu Sanchez
 *
-* Student ID: 912740223
-*
+* Student ID: 912740223 
+* 
 * Project: Assignment 2 - Tapeless Ruler - Echo Sensor
 * File: echosensor.c
 *
-* Desription:
+* Desription: 
 *
 *****************************************************************************************************************************************/
 #include <stdio.h>
@@ -27,50 +27,53 @@ double distance (){
 //set trig to LOW
  digitalWrite(trig, LOW);
 
- delay(2000);
+ //set trig to delay 1 micosecond
+ delay(500);
 
- //set trig to HIGH
+ //set trig to LOW
  digitalWrite(trig, HIGH);
- delay(0.01);
- 
+  delay(0.05);
+
  //set trig to
  digitalWrite(trig, LOW);
 
+clock_t start_t;
+clock_t end_t;
+clock_t total_t;
 
-time_t startTime;
-time_t endTime;
-
-//save start time
+//save start time 
 while(digitalRead(echo) == 0){
-startTime = time(NULL);
+    start_t = clock();
+    printf("Starting of the program, start_t = %ld\n", start_t);
 }
 
-//save time of arrival
+//save time of arrival 
 while(digitalRead(echo) == 1){
-endTime = time(NULL);
+   end_t = clock();
+   printf("End of the big loop, end_t = %ld\n", end_t);
+} 
+
+//time difference between start and arrival 
+total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
+   printf("Total time taken by CPU: %ld\n", total_t  );
+
+return (total_t * 17000);
+
 }
-
-//time difference between start and arrival
-time_t timeElasped = startTime - endTime;
-
-return round(timeElasped * 343150, 2);
-
-}
-
 
 
 int main (void){
 
-      wiringPiSetup();
+     if( wiringPiSetup() == -1){
       pinMode(echo, INPUT);
       pinMode(trig, OUTPUT);
-
-
+     }else{
+       exit(0);
+    
     while(1){
         double dist = distance();
-        printf ("Measured distance", dist);
-
-       
+        printf("%f"dist);
+        delay(1000);
     }
   return  0;
 } 
