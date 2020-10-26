@@ -8,8 +8,8 @@ The program created is a traffic light, using one Red, one Yellow, and one Green
 2) LED 
 3) Resistors
 4) Breadboard
-5) Jumper wires 
+5) Jumper wires
 
 # How to connect the hardware: 
 
-Use the diagram to connect the LED's with the pins. 
+Use the hardware diagram to connect the LED's with the Raspberry Pi pins. Watch the video to see how the program runs.    
