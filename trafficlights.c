@@ -2,13 +2,7 @@
 * 
 * Class: CSC-615-01 Spring 2020
 *
-<<<<<<< HEAD
 * Name: Daisy Sanchez
-=======
-* 
-*
-*  
->>>>>>> 5e0f5ed19dc49cd65ca64fe8ae7b43d0b5137fd7
 * 
 * Project: Traffic Light 
 *
