@@ -2,11 +2,9 @@
 * 
 * Class: CSC-615-01 Spring 2020
 *
-* Name: Daisu Sanchez
-*
-* Student ID: 912740223 
+* Name: Daisy Sanchez
 * 
-* Project: Assignment 1 - Traffic Light 
+* Project: Traffic Light 
 *
 * File: Trafficlights.c
 *
@@ -54,7 +52,7 @@
     //pauses program for the amount of time (in miliseconds) specified as parameter 
     delay(5000);
 
-    var++;
+  
 
   }
     //ALl lights are off 
